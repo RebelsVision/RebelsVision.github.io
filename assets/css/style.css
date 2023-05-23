@@ -1,0 +1,393 @@
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+/* ELement Selectors */
+/* Row 10 - 33 is a simple way of quickly creating a reactive site with very little involved*/
+html {
+  color-scheme: light dark;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue";
+  font-size: 1.125;
+  line-height: 1.5;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+main {
+  width: min(70ch, 100% - 4rem);
+  margin-inline: auto;
+}
+
+/* Nav */
+.banner {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../images/wp7852573-entrepreneurship-wallpapers.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.navbar {
+  width: 95%;
+  /* margin: auto; */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+}
+
+.logo {
+  width: 130px;
+  /* original width was 210px */
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.logo:hover {
+  opacity: 1;
+  box-shadow: #bebcc0;
+}
+
+.navbar ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  position: relative;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #bebcc0;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+/* The code below creates a hovering affect from left to right for the menu*/
+.navbar ul li::after {
+  content: "";
+  height: 3px;
+  width: 0;
+  background: #4d1b8f;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
+}
+
+.navbar ul li a:hover {
+  opacity: 1;
+  color: #bebcc0;
+  font-weight: 500;
+  background-color: #403d44;
+}
+
+.navbar ul li:hover::after {
+  width: 100%;
+}
+
+/* Main */
+.content {
+  width: 100%;
+  height: auto;
+  max-height: 1200px;
+  position: absolute;
+  /* changing top to 90% changed it so that the bottom part of has the same background as the rest of the page*/
+  top: 90%;
+  left: 0;
+  transform: translateY(-90%);
+  text-align: center;
+  color: #fff;
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+
+.content h1 {
+  font-size: 60px;
+  margin-top: 80px;
+}
+
+.content h2 {
+  color: #726288;
+  font-weight: 400px;
+}
+
+.content p {
+  /* margin: 20px auto; */
+  font-weight: 100;
+  line-height: 1.5rem;
+  font-size: 18px;
+  color: #bebcc0;
+}
+
+button {
+  width: 200px;
+  padding: 15px 0;
+  text-align: center;
+  margin: 20px 10px;
+  border-radius: 25px;
+  font-weight: bold;
+  border: 3px solid #4d1b8f;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-button span {
+  background: #4d1b8f;
+  height: 100%;
+  width: 0;
+  border-radius: 25px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+button:hover span {
+  width: 100%;
+}
+
+button:hover {
+  border: none;
+}
+
+.portrait {
+  display: flex;
+  flex-direction: row;
+  padding: 20;
+  margin: 0 auto;
+
+  border-radius: 15%;
+  border: 0.2rem double #3d314d;
+}
+
+.myname {
+  padding: 1%;
+}
+
+#about-me h1 {
+  font-size: 60px;
+  margin-top: 1rem;
+  color: #bebcc0;
+}
+
+.content p {
+  color: rgb(187, 177, 177);
+  width: 850px;
+  height: auto;
+  padding: 20px;
+  margin: 0 auto;
+  line-height: 1.75rem;
+}
+
+#contact {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  /*To make the form centered you need to add a max width for the form and margin (0 auto) [remember this results in the item being centered with a set width] */
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#contact h2 {
+  font-size: 4em;
+  margin: 0 auto;
+  margin-top: 60px;
+  max-width: 600px;
+}
+#contact label {
+  font-size: 18px;
+  color: rgba(187, 177, 177, 0.863);
+  line-height: 3rem;
+}
+
+#contact p {
+  /* margin: 20px auto; */
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 25px;
+}
+
+#contact input {
+  width: 200px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  background-color: rgba(187, 177, 177, 0.863);
+  padding: 4px 2px;
+  border: #fff;
+  margin: 10px;
+  font-weight: 500px;
+  color: #000000;
+}
+
+#clickme::after {
+  content: "";
+  height: 3px;
+  width: 0;
+  background: #4d1b8f;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
+}
+
+#clickme:hover {
+  opacity: 1;
+  color: #bebcc0;
+  font-weight: 500;
+  background-color: #6b558a;
+  width: 60%;
+}
+
+#clickme:hover::after {
+  width: 100%;
+}
+
+.container-left {
+  display: flex;
+}
+
+.container1 {
+  display: flex;
+  flex-direction: column;
+  /*Powerful combination property (look it up) - forcing labels to be 30%*/
+  flex: 1 0 30%;
+  justify-content: space-evenly;
+  /* align-items: ; */
+  text-align: left;
+}
+
+.container2 {
+  display: flex;
+  flex-direction: column;
+  /*Powerful combination property (look it up) - forcing labels to be 30%*/
+  flex: 1 0 30%;
+  justify-content: space-evenly;
+  /* align-items: ; */
+  text-align: left;
+}
+
+.card {
+  width: 400px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.header {
+  background-color: #333;
+  padding: 20px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.body {
+  padding: 20px;
+}
+
+/*Skill card*/
+
+.skill {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.skill-name {
+  width: 120px;
+  font-size: 16px;
+  color: #4d1b8f;
+  font-weight: 550;
+  letter-spacing: 0.5px;
+}
+
+.skill-level {
+  width: 160px;
+  height: 10px;
+  background-color: #bebcc0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-left: 20px;
+}
+
+.skill-percent {
+  background-color: #333;
+  height: 100%;
+}
+
+.skill-percent-number {
+  margin-left: 20px;
+  font-size: 16px;
+}
+
+/*Cards to display projects*/
+.project-cards {
+  width: 275px;
+  height: 450px;
+  border-radius: 4px;
+  background: #212121;
+  display: flex;
+  margin: 0 auto;
+  gap: 5px;
+  padding: 0.6em;
+}
+
+.project-cards p {
+  height: 100%;
+  flex: 1;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.5s;
+  background: #212121;
+  border: 2px solid #4d1b8f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-cards p:hover {
+  flex: 4;
+}
+
+.project-cards p span {
+  min-width: 14em;
+  padding: 0.5em;
+  text-align: center;
+  transform: rotate(-90deg);
+  transition: all 0.5s;
+  text-transform: uppercase;
+  color: #bebcc0;
+  letter-spacing: 0.1em;
+}
+
+.project-cards p:hover span {
+  transform: rotate(0);
+  transition: 0.9s;
+}
